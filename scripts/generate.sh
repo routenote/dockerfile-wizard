@@ -132,3 +132,12 @@ RUN apt-get -y install libgconf-2-4 \
   && mv chromedriver /usr/local/bin/chromedriver \
   && chmod +x /usr/local/bin/chromedriver"
 fi
+
+echo "# Install Libraries
+RUN apt-get update \
+  apt-get install -y libsqlite3-dev libgmp-dev \
+  apt-get install -y libmagickwand-dev --no-install-recommends \
+  pecl install imagick \
+  docker-php-ext-enable imagick \
+  docker-php-ext-install gmp \
+  docker-php-ext-install intl"
