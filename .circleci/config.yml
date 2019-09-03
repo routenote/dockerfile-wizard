@@ -4,9 +4,9 @@ image_config: &image_config
   # either as project-specific environment variables
   # or as resources in your organization's org-global Context
 
-  IMAGE_NAME: routenote-laravel routenote-laravel
+  IMAGE_NAME: routenote-laravel
 
-  IMAGE_TAG: laravel laravel
+  IMAGE_TAG: laravel
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
