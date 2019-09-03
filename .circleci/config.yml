@@ -24,12 +24,27 @@ image_config: &image_config
   JAVA: false
 
   MYSQL_CLIENT: true
+  MYSQL_ALLOW_EMPTY_PASSWORD: true
+  MYSQL_DATABASE: push_testing
+  MYSQL_USER: push
+  MYSQL_PASSWORD: push
 
   POSTGRES_CLIENT: false
 
   DOCKERIZE: false
 
   BROWSERS: true
+
+  - run:
+    name: Install Libraries
+    command: /
+      apt-get update
+      apt-get install -y libsqlite3-dev libgmp-dev
+      apt-get install -y libmagickwand-dev --no-install-recommends
+      pecl install imagick
+      docker-php-ext-enable imagick
+      docker-php-ext-install gmp
+      docker-php-ext-install intl
 
 version: 2
 jobs:
